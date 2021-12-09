@@ -1,0 +1,16 @@
+program EmploMVC;
+
+uses
+  Vcl.Forms,
+  uFrmPrincipal in 'view\uFrmPrincipal.pas' {FrmPrincipal},
+  UfrmCadastrarCliente in 'view\UfrmCadastrarCliente.pas' {FrmCadastrarCliente};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
+  Application.CreateForm(TFrmCadastrarCliente, FrmCadastrarCliente);
+  Application.Run;
+end.

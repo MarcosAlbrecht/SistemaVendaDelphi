@@ -1,0 +1,43 @@
+unit uClienteController;
+
+interface
+uses
+  uClienteModel, uDmCliente;
+
+type
+  TClienteController = class
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    function Inserir(oCliente: TCliente; var sErro : String): Boolean;
+    function Alterar(oCliente: TCliente; var sErro : String): Boolean;
+    function Excluir(iCodigo : Integer; var sErro : String): Boolean;
+  published
+    { published declarations }
+  end;
+implementation
+
+{ TClienteController }
+
+function TClienteController.Alterar(oCliente: TCliente;
+  var sErro: String): Boolean;
+begin
+  Result := DmCliente.Alterar(oCliente, sErro);
+end;
+
+function TClienteController.Excluir(iCodigo: Integer;
+  var sErro: String): Boolean;
+begin
+  Result := DmCliente.Inserir(iCodigo, sErro);
+end;
+
+function TClienteController.Inserir(oCliente: TCliente;
+  var sErro: String): Boolean;
+begin
+  Result := DmCliente.Inserir(oCliente, sErro);
+end;
+
+end.

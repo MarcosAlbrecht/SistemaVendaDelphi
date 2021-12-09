@@ -1,0 +1,10 @@
+object DmConexao: TDmConexao
+  OldCreateOrder = False
+  Height = 250
+  Width = 461
+  object sqlConexao: TSQLConnection
+    LoginPrompt = False
+    Left = 200
+    Top = 40
+  end
+end

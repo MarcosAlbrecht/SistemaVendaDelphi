@@ -1,0 +1,12 @@
+unit uEstadoController;
+
+interface
+
+type
+  TEstadoController = class
+
+  end;
+
+implementation
+
+end.

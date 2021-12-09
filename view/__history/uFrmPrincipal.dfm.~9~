@@ -1,0 +1,27 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'FrmPrincipal'
+  ClientHeight = 365
+  ClientWidth = 784
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  PixelsPerInch = 96
+  TextHeight = 13
+  object btnCliente: TButton
+    Left = 8
+    Top = 8
+    Width = 80
+    Height = 60
+    Caption = 'Cliente'
+    TabOrder = 0
+    OnClick = btnClienteClick
+  end
+end

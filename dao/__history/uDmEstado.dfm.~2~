@@ -1,0 +1,17 @@
+object DmEstado: TDmEstado
+  OldCreateOrder = False
+  Height = 254
+  Width = 498
+  object sqlPesquisar: TFDQuery
+    Connection = DmConexao.FDConnection1
+    SQL.Strings = (
+      'select id_estado, descricao, uf from estado')
+    Left = 128
+    Top = 56
+  end
+  object DataSource1: TDataSource
+    DataSet = sqlPesquisar
+    Left = 128
+    Top = 128
+  end
+end

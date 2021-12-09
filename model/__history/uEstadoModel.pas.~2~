@@ -1,0 +1,16 @@
+unit uEstadoModel;
+
+interface
+
+type
+  TEstado = class
+  private
+  public
+  property ID_ESTADO : Integer read FID_ESTADO write FID_ESTADO;
+  property DESCRICAO : String read FDESCRICAO write FDESCRICAO;
+
+end;
+
+implementation
+
+end.

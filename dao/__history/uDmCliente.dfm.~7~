@@ -1,0 +1,80 @@
+object DmCliente: TDmCliente
+  OldCreateOrder = False
+  Height = 291
+  Width = 561
+  object sqlPesquisar: TFDQuery
+    Connection = DmConexao.FDConnection1
+    SQL.Strings = (
+      'select id, nome, telefone from cliente where (nome like :nome)')
+    Left = 96
+    Top = 80
+    ParamData = <
+      item
+        Name = 'NOME'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 80
+        Value = Null
+      end>
+    object sqlPesquisarID: TIntegerField
+      FieldName = 'ID'
+      Origin = 'ID'
+      Required = True
+    end
+    object sqlPesquisarNOME: TStringField
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      Required = True
+      Size = 80
+    end
+    object sqlPesquisarTELEFONE: TStringField
+      FieldName = 'TELEFONE'
+      Origin = 'TELEFONE'
+      Size = 10
+    end
+  end
+  object sqlInserir: TFDQuery
+    Connection = DmConexao.FDConnection1
+    SQL.Strings = (
+      'insert into CLIENTE (NOME, TIPO, DOCUMENTO, TELEFONE)'
+      'values (:NOME, :TIPO, :DOCUMENTO, :TELEFONE)')
+    Left = 176
+    Top = 80
+    ParamData = <
+      item
+        Name = 'NOME'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 80
+        Value = Null
+      end
+      item
+        Name = 'TIPO'
+        DataType = ftFixedChar
+        ParamType = ptInput
+        Size = 1
+      end
+      item
+        Name = 'DOCUMENTO'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 15
+      end
+      item
+        Name = 'TELEFONE'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 10
+      end>
+  end
+  object sqlAlterar: TFDQuery
+    Connection = DmConexao.FDConnection1
+    Left = 248
+    Top = 80
+  end
+  object sqlExcluir: TFDQuery
+    Connection = DmConexao.FDConnection1
+    Left = 328
+    Top = 80
+  end
+end

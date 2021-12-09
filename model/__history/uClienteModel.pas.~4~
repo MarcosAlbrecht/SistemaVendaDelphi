@@ -1,0 +1,26 @@
+unit uClienteModel;
+
+interface
+
+type
+  TCliente = class
+  private
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    property ID : Integer read FID write FID;
+    property Nome : String;
+    property Tipo : String read FTipo write FTipo;
+    property Documento : String read FDocumento write FDocumento;
+
+
+
+  published
+    { published declarations }
+  end;
+
+implementation
+
+end.

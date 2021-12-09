@@ -1,0 +1,57 @@
+unit uDmEstado;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, uDmConexao, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TDmEstado = class(TDataModule)
+    sqlPesquisar: TFDQuery;
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure PesquisarEstado(sEstado: String);
+    procedure CarregarEstados(oEstado : TEstado);
+  end;
+
+var
+  DmEstado: TDmEstado;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+{ TDataModule1 }
+
+procedure TDmEstado.CarregarEstados;
+var
+  sqlEstado : TFDQuery;
+begin
+  sqlEstado := TFDQuery.Create(nil);
+  try
+    with sqlEstado do
+    begin
+      Connection := DmConexao.FDConnection1;
+      SQL.Text := 'select id_estado, descricao, uf from estado';
+      Open;
+      with
+    end;
+  finally
+    FreeAndNil(sqlEstado);
+  end;
+end;
+
+procedure TDmEstado.PesquisarEstado(sEstado: String);
+begin
+
+end;
+
+end.
